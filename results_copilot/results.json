@@ -1,0 +1,19 @@
+{
+  "model_label": "GitHub Copilot",
+  "target": "price_month",
+  "train_size": 3000,
+  "output_neighborhood": "Marousi",
+  "output_rows": 351,
+  "overall_in_sample_metrics": {
+    "rmse": 60.76692604396796,
+    "mae": 50.84423530358538,
+    "mape_pct": 5.448915865888095,
+    "r2": 0.9436439040787795
+  },
+  "output_neighborhood_in_sample_metrics": {
+    "rmse": 58.20383063692172,
+    "mae": 48.94169874918114,
+    "mape_pct": 5.46079940771594,
+    "r2": 0.9408099377924101
+  }
+}

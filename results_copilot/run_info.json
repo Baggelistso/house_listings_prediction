@@ -1,0 +1,64 @@
+{
+  "data_path": "/home/runner/work/house_listings_prediction/house_listings_prediction/monthly_rentals_greece.json",
+  "model_label": "GitHub Copilot",
+  "seed": 42,
+  "target": "price_month",
+  "target_transform": {
+    "func": "log1p",
+    "inverse_func": "expm1",
+    "wrapper": "TransformedTargetRegressor"
+  },
+  "features": {
+    "numeric": [
+      "rooms",
+      "sq_m",
+      "bathrooms",
+      "floor",
+      "year_built"
+    ],
+    "categorical": [
+      "area"
+    ]
+  },
+  "preprocessing": {
+    "numeric": "StandardScaler",
+    "categorical": "OneHotEncoder(handle_unknown='ignore')"
+  },
+  "mlp_parameters": {
+    "hidden_layer_sizes": [
+      128,
+      64,
+      32
+    ],
+    "activation": "relu",
+    "solver": "adam",
+    "max_iter": 500,
+    "early_stopping": true,
+    "validation_fraction": 0.1,
+    "n_iter_no_change": 20,
+    "random_state": 42
+  },
+  "training": {
+    "train_size": 3000,
+    "split": "none (100% train, in-sample metrics only)",
+    "epochs_run": 165
+  },
+  "output_scope": {
+    "target_neighborhood": "Marousi",
+    "output_rows": 351
+  },
+  "metrics": {
+    "overall_in_sample": {
+      "rmse": 60.76692604396796,
+      "mae": 50.84423530358538,
+      "mape_pct": 5.448915865888095,
+      "r2": 0.9436439040787795
+    },
+    "output_neighborhood_in_sample": {
+      "rmse": 58.20383063692172,
+      "mae": 48.94169874918114,
+      "mape_pct": 5.46079940771594,
+      "r2": 0.9408099377924101
+    }
+  }
+}
